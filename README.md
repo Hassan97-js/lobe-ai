@@ -2,7 +2,7 @@
 
 ## Description
 
-This project is a clone of [LobeAI website](https://www.lobe.ai/), which is a tool that
+This project is a clone of [LobeAI tour website](https://www.lobe.ai/tour), which is a tool that
 helps users create and train machine learning models with a free, easy to use interface.
 
 ## Technologies
