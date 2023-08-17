@@ -11,6 +11,8 @@ This project was built with Sass, TypeScript and Vite.js.
 
 * Sass is a preprocessor that extends the functionality of CSS.
 * Vite.js is a build tool that provides fast and efficient development.
+* TypeScript is a strongly typed programming language that builds on JavaScript,
+  giving a better tooling at any scale.
 
 ## Getting Started
 
