@@ -1,0 +1,138 @@
+@use "sass:meta" as meta;
+
+@use "colors" as *;
+@use "breakpoints" as *;
+
+@mixin from($key) {
+  $size: map-get($breakpoints, $key);
+
+  @media only screen and (min-width: $size) {
+    @content;
+  }
+}
+
+@mixin generate-map(
+  $map,
+  $attribute,
+  $withParent: true,
+  $prefix: "-",
+  $separator: "-",
+  $base: "base",
+  $unit: "rem"
+) {
+  @each $key, $value in $map {
+    @if ($withParent == true) {
+      &#{if($key != $base, #{$prefix}#{$key}, '')} {
+        @if meta.type-of($value) == "map" {
+          @include generate-map($value, $attribute, $separator);
+        } @else {
+          #{$attribute}: #{$value};
+        }
+      }
+    } @else {
+      .#{if($key != $base, #{$key}, "")} {
+        @if meta.type-of($value) == "map" {
+          @include generate-map($value, $attribute, $separator);
+        } @else {
+          #{$attribute}: #{$value};
+        }
+      }
+    }
+  }
+}
+
+@mixin flexbox(
+  $display: flex,
+  $direction: row,
+  $placeContent: null,
+  $placeItems: null,
+  $wrap: nowrap,
+  $shrink: 0,
+  $grow: 0,
+  $alignContent: null,
+  $justifyContent: null,
+  $alignItems: null,
+  $justifyItems: null
+) {
+  display: $display;
+  flex-direction: $direction;
+
+  @if $placeContent == null {
+    @if $alignContent {
+      align-content: $alignContent;
+    }
+    @if $justifyContent {
+      justify-content: $justifyContent;
+    }
+  } @else {
+    place-content: $placeContent;
+  }
+
+  @if $placeItems == null {
+    @if $alignItems {
+      align-items: $alignItems;
+    }
+    @if $justifyItems {
+      justify-items: $justifyItems;
+    }
+  } @else {
+    place-items: $placeItems;
+  }
+
+  flex-wrap: $wrap;
+  flex-shrink: $shrink;
+  flex-grow: $grow;
+}
+
+@mixin box-shadow($shadows...) {
+  // they can be accessed as a
+  // map by passing the argument
+  // list to the meta.keywords()
+  // function.
+  @debug meta.keywords($args);
+
+  box-shadow: $shadows;
+}
+
+@mixin gradient($direction, $colors...) {
+  background: linear-gradient($direction, $colors);
+}
+
+@mixin hover {
+  &:not([disabled]):hover {
+    @content;
+  }
+}
+
+@mixin focus {
+  &:not([disabled]):focus {
+    @content;
+  }
+}
+
+@mixin active {
+  &:not([disabled]):active {
+    @content;
+  }
+}
+
+@mixin btn-reset {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  align-self: start;
+  border: none;
+  min-width: 10ch;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  text-align: center;
+  line-height: 1.1;
+  user-select: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+
+  @media screen and (-ms-high-contrast: active) {
+    border: 2px solid currentcolor;
+  }
+}

@@ -1,0 +1,35 @@
+@use "../abstracts" as *;
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  line-height: 1.1;
+  font-weight: 700;
+}
+
+h1 {
+  font-size: var(--fs-3xl);
+}
+
+h2 {
+  font-size: var(--fs-2xl);
+}
+
+p {
+  max-width: 60ch;
+  font-size: var(--fs-base);
+  color: var(--clr-dark-8);
+  letter-spacing: -0.05em;
+}
+
+a {
+  color: var(--clr-dark-8, #495057);
+  user-select: none;
+}
+
+a.nav-link {
+  text-decoration: none;
+  font-weight: 500;
+}

@@ -1,0 +1,13 @@
+@use "../abstracts" as *;
+
+.text {
+  @include generate-map($map: $colors, $attribute: "color");
+}
+
+.fill {
+  @include generate-map($map: $colors, $attribute: "fill");
+}
+
+.bg {
+  @include generate-map($map: $colors, $attribute: "background-color");
+}

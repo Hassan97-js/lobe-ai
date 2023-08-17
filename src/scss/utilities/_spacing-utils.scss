@@ -1,0 +1,17 @@
+@use "sass:meta";
+
+@use "../abstracts" as *;
+
+@each $short, $long in $space-prefixes {
+  @each $prefix, $value in $space-values {
+    .#{$short}-#{$prefix} {
+      @if (meta.type-of($long) == "list") {
+        @each $prop in $long {
+          #{$prop}: #{$value};
+        }
+      } @else {
+        #{$long}: #{$value};
+      }
+    }
+  }
+}

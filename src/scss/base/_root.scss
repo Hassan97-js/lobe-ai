@@ -1,0 +1,41 @@
+@use "sass:meta" as meta;
+
+@use "../abstracts" as *;
+
+:root {
+  @each $color, $shades in $colors {
+    @if (meta.type-of($shades) == "map") {
+      @each $shade, $value in $shades {
+        --clr-#{$color}-#{$shade}: #{$value};
+      }
+    } @else {
+      --clr-#{$color}: #{$shades};
+    }
+  }
+
+  @each $screen-size, $font-sizes in $type-scale {
+    @if $screen-size == sm {
+      @each $size, $value in $font-sizes {
+        --fs-#{$size}: #{$value};
+      }
+    } @else {
+      @include from(lg) {
+        @each $size, $value in $font-sizes {
+          --fs-#{$size}: #{$value};
+        }
+      }
+    }
+  }
+
+  @each $prefix, $value in $space-values {
+    --spacer-#{$prefix}: #{$value};
+  }
+
+  @each $prefix, $value in $radiuses {
+    --radius-#{$prefix}: #{$value};
+  }
+
+  @each $prefix, $value in $shadows {
+    --shadow-#{$prefix}: #{$value};
+  }
+}

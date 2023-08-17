@@ -1,0 +1,21 @@
+@use "../../abstracts" as *;
+
+.cta {
+  h2 {
+    margin-bottom: var(--spacer-6, 1.5rem);
+    letter-spacing: -0.04em;
+    max-width: 13ch;
+    margin-left: auto;
+    margin-right: auto;
+
+    @include from(lg) {
+      margin-bottom: var(--spacer-8, 2.5rem);
+    }
+  }
+
+  button {
+    @include from(lg) {
+      font-size: 1.44rem;
+    }
+  }
+}

@@ -1,0 +1,7 @@
+@use "../abstracts" as *;
+
+// .d {
+//   @include generate-map($map: $displays, $attribute: "display");
+// }
+
+@include generate-map($map: $displays, $attribute: "display", $withParent: false);

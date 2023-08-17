@@ -1,0 +1,22 @@
+@use "../../abstracts" as *;
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  background-color: var(--clr-light, rgba(255, 255, 255));
+  padding-top: var(--spacer-5, 1.25rem);
+  padding-bottom: var(--spacer-5, 1.25rem);
+  z-index: 100;
+  user-select: none;
+
+  .btn-header-download {
+    display: none;
+
+    @include from(lg) {
+      display: flex;
+    }
+  }
+}

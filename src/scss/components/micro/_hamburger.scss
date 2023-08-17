@@ -1,0 +1,65 @@
+@use "../../abstracts" as *;
+
+$hamburger-width: 2.5rem;
+$hamburger-height: 2.5rem;
+
+$hamburger-bar-width: 1.125rem;
+$hamburger-bar-height: 2px;
+
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--clr-dark-2, rgba(241, 243, 245));
+  width: $hamburger-width;
+  height: $hamburger-height;
+  shape-rendering: crispEdges;
+  transition: background-color 200ms ease, box-shadow 200ms ease;
+
+  @include from(lg) {
+    display: none;
+  }
+}
+
+.hamburger span,
+.hamburger span::before,
+.hamburger span::after {
+  content: "";
+  display: block;
+  position: absolute;
+  border-radius: 1px;
+  width: $hamburger-bar-width;
+  height: $hamburger-bar-height;
+  background-color: var(--clr-dark-10, rgba(33, 37, 41));
+}
+
+.hamburger--open span::before {
+  top: -5px;
+  left: 0;
+}
+
+.hamburger--open span::after {
+  bottom: -5px;
+  left: 0;
+}
+
+.hamburger--close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.hamburger--close span {
+  background-color: transparent;
+}
+
+.hamburger--close span::before {
+  top: 0;
+  transform: rotate(45deg);
+}
+
+.hamburger--close span::after {
+  top: 5px;
+  transform: translateY(-5px) rotate(-45deg);
+}

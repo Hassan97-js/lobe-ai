@@ -1,0 +1,19 @@
+@use "../abstracts" as *;
+
+@each $screen-size, $font-sizes in $type-scale {
+  @if $screen-size == sm {
+    @each $size, $value in $font-sizes {
+      .fs-#{$size} {
+        font-size: $value;
+      }
+    }
+  } @else {
+    @include from(lg) {
+      @each $size, $value in $font-sizes {
+        .fs-#{$size} {
+          font-size: $value;
+        }
+      }
+    }
+  }
+}

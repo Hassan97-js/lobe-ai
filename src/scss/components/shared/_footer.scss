@@ -1,0 +1,58 @@
+@use "../../abstracts" as *;
+
+.footer {
+  font-weight: 400;
+  font-size: var(--fs-base);
+
+  &-heading {
+    margin-bottom: var(--spacer-4);
+    font-size: var(--fs-base);
+    font-weight: 600;
+    color: var(--clr-dark-10);
+    text-align: center;
+  }
+
+  & &-row {
+    @include from(lg) {
+      flex-direction: row;
+      gap: 3em;
+    }
+  }
+
+  &-col {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: var(--spacer-8);
+    padding-bottom: var(--spacer-8);
+    text-align: center;
+
+    .logo {
+      margin-bottom: var(--spacer-5);
+    }
+
+    @include from(lg) {
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+  }
+
+  &-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+
+    .nav-link {
+      font-weight: 400;
+    }
+  }
+
+  &-copyright > p {
+    font-size: var(--fs-sm);
+  }
+
+  &-copyright > p + p {
+    margin-top: var(--spacer-3);
+  }
+}

@@ -1,0 +1,22 @@
+$flex-direction: (
+  "col": column,
+  "row": row,
+  "col-reverse": column-reverse,
+  "row-reverse": row-reverse
+);
+
+$flex-alignments-x: (
+  "center": center,
+  "between": space-between,
+  "around": space-around,
+  "evenly": space-evenly,
+  "start": flex-start,
+  "end": flex-end
+);
+
+$flex-alignments-y: (
+  "stretch": stretch,
+  "center": center,
+  "flex-start": flex-start,
+  "flex-end": flex-end
+);

@@ -1,0 +1,34 @@
+// Guide Source:
+// https://moderncss.dev/css-button-styling-guide/
+
+@use "sass:color" as color;
+@use "../../abstracts" as *;
+
+.btn {
+  @include btn-reset;
+
+  &-small {
+    font-size: 0.875rem;
+  }
+
+  &-block {
+    width: 100%;
+  }
+
+  @include hover {
+    transform: scale3d(1.05, 1.05, 1.05);
+  }
+
+  @include active {
+    transform: scale3d(1.05, 1.05, 1.05);
+  }
+}
+
+.btn-rounded {
+  border-radius: var(--radius-full, 100px);
+}
+
+.btn-primary {
+  background-color: var(--clr-primary-10, #087f5b);
+  color: var(--clr-light, rgba(255, 255, 255));
+}

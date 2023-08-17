@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Permissions-Policy" content="interest-cohort=()" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;700&display=swap"
+      rel="stylesheet" />
+    <title>Lobe AI</title>
+  </head>
+  <body class="flex flex-col text-dark">
+    <header class="header shadow-sm">
+      <div class="container">
+        <div class="flex justify-between items-center">
+          <a class="logo link" href="#">
+            <img src="./image/lobe-logo.svg" alt="Logo" />
+          </a>
+
+          <nav class="navbar flex items-center">
+            <ul role="list" class="nav-menu">
+              <li class="active">
+                <a class="nav-link active" href="#">Overview</a>
+              </li>
+              <li>
+                <a class="nav-link" href="#">Examples</a>
+              </li>
+              <li>
+                <a class="nav-link" href="#">Tour</a>
+              </li>
+              <li>
+                <a class="nav-link" href="#">Blog</a>
+              </li>
+              <li>
+                <a class="nav-link" href="#">Help</a>
+              </li>
+            </ul>
+
+            <ul role="list" class="nav-menu-mobile">
+              <button type="button" class="hamburger hamburger--close radius-full">
+                <span class="hamburger-icon"></span>
+              </button>
+              <li class="active">
+                <a class="nav-link" href="#">Overview</a>
+              </li>
+              <li>
+                <a class="nav-link" href="#">Examples</a>
+              </li>
+              <li>
+                <a class="nav-link" href="#">Tour</a>
+              </li>
+              <li>
+                <a class="nav-link" href="#">Blog</a>
+              </li>
+              <li>
+                <a class="nav-link" href="#">Help</a>
+              </li>
+
+              <li>
+                <button type="button" class="btn btn-primary btn-rounded">
+                  Download
+                </button>
+              </li>
+            </ul>
+
+            <button
+              type="button"
+              id="open-menu"
+              aria-label="Menu Button"
+              class="hamburger hamburger--open relative radius-full">
+              <span class="hamburger-icon"></span>
+            </button>
+          </nav>
+
+          <button
+            type="button"
+            class="btn btn-primary btn-rounded btn-header-download">
+            Download
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main class="main flex-1">
+      <section class="hero container text-center">
+        <header class="hero-header">
+          <h1 class="heading-primary text-center">
+            Lobe <span class="hl-primary">Tour</span>
+          </h1>
+          <p class="hero-description text-center">
+            Build your first machine learning model in ten minutes. No code or
+            experience required.
+          </p>
+        </header>
+
+        <div class="video-container" id="backdrop">
+          <button type="button" class="video-container-close radius-full">
+            <svg
+              id="close-modal"
+              width="32px"
+              height="32px"
+              viewBox="0 0 32 32"
+              version="1.1">
+              <g
+                stroke-width="1"
+                fill="none"
+                fill-rule="evenodd"
+                opacity="0.699999988"
+                stroke-linecap="round"
+                stroke-linejoin="round">
+                <g
+                  id="Button-/-Close"
+                  transform="translate(5.000000, 5.000000)"
+                  stroke-width="2">
+                  <g transform="translate(-5.000000, -5.000000)">
+                    <line x1="27" y1="5" x2="5" y2="27"></line>
+                    <line x1="5" y1="5" x2="27" y2="27"></line>
+                  </g>
+                </g>
+              </g>
+            </svg>
+          </button>
+          <div class="img-container" id="backdrop-inner"></div>
+        </div>
+        <div class="video-image-container" id="open-video">
+          <img
+            loading="lazy"
+            src="/image/video.jpg"
+            alt="Learn more about Lobe by watching our tour video." />
+        </div>
+      </section>
+
+      <section class="cta container text-center">
+        <h2 class="cta-heading text-center">Train your app with Lobe</h2>
+
+        <button type="button" class="btn btn-primary btn-rounded cta-btn-download">
+          Download
+        </button>
+      </section>
+    </main>
+
+    <footer class="footer container">
+      <div class="footer-row flex flex-col">
+        <div class="footer-col">
+          <h3 class="footer-heading">About</h3>
+          <ul class="footer-list" role="list">
+            <li class="footer-list-item">
+              <a class="nav-link" href="#">Download</a>
+            </li>
+            <li class="footer-list-item">
+              <a class="nav-link" href="#">Overview</a>
+            </li>
+            <li class="footer-list-item">
+              <a class="nav-link" href="#">Examples</a>
+            </li>
+            <li class="footer-list-item">
+              <a class="nav-link" href="#">Blog</a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3 class="footer-heading">General</h3>
+          <ul class="footer-list" role="list">
+            <li class="footer-list-item">
+              <a class="nav-link" href="#">Notice</a>
+            </li>
+            <li class="footer-list-item">
+              <a class="nav-link" href="#">License</a>
+            </li>
+            <li class="footer-list-item">
+              <a class="nav-link" href="#">Press Inquiry</a>
+            </li>
+            <li class="footer-list-item">
+              <a class="nav-link" href="#">Press Images</a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3 class="footer-heading">Resources</h3>
+          <ul class="footer-list" role="list">
+            <li class="footer-list-item">
+              <a class="nav-link" href="#">Help</a>
+            </li>
+            <li class="footer-list-item">
+              <a class="nav-link" href="#">Tour</a>
+            </li>
+            <li class="footer-list-item">
+              <a class="nav-link" href="#">Contact</a>
+            </li>
+            <li class="footer-list-item">
+              <a class="nav-link" href="#">Privacy</a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <a class="logo link block" href="#">
+            <img src="./image/lobe-logo.svg" alt="Logo" />
+          </a>
+
+          <div class="footer-copyright">
+            <p class="text">A product by Microsoft.</p>
+            <p class="text">All rights reserved.</p>
+            <p class="text">© Microsoft 2021</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

@@ -1,0 +1,5 @@
+@use "../abstracts" as *;
+
+.shadow {
+  @include generate-map($map: $shadows, $attribute: "box-shadow");
+}

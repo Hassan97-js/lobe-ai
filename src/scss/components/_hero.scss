@@ -1,0 +1,39 @@
+@use "../abstracts" as *;
+
+.hero-header {
+  margin-bottom: var(--spacer-8, 2.5rem);
+
+  @include from(lg) {
+    margin-bottom: var(--spacer-9, 3rem);
+  }
+
+  h1 {
+    margin-bottom: var(--spacer-3, 0.75rem);
+    letter-spacing: -0.05em;
+
+    @include from(lg) {
+      margin-bottom: var(--spacer-4, 1rem);
+    }
+  }
+
+  p {
+    max-width: 34ch;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.video-image-container {
+  max-width: 55rem;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: var(--radius-3xl, 1.5rem);
+  overflow: hidden;
+  transition: all 400ms ease;
+  cursor: pointer;
+
+  @include hover {
+    box-shadow: var(--shadow-2xl);
+    transform: scale3d(1.01, 1.01, 1.01);
+  }
+}

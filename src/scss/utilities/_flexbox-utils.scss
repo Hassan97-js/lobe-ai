@@ -1,0 +1,17 @@
+@use "../abstracts" as *;
+
+.flex-1 {
+  flex: 1 0 auto;
+}
+
+.flex {
+  @include generate-map($map: $flex-direction, $attribute: "flex-direction");
+}
+
+.justify {
+  @include generate-map($map: $flex-alignments-x, $attribute: "justify-content");
+}
+
+.items {
+  @include generate-map($map: $flex-alignments-y, $attribute: "align-items");
+}
